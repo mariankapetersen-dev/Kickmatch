@@ -167,6 +167,10 @@
 
         <button onclick="alert('Match-Suche gestartet!')">
           Match finden
+    
+           </button>
+            <button onclick="showAuth()">
+    Registrieren / Anmelden
         </button>
       </div>
 
@@ -240,7 +244,53 @@ window.onload = function() {
 
 
 
+  </div><div id="authBox" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+">
+  <div style="
+    background:#101510;
+    padding:25px;
+    border-radius:20px;
+    width:90%;
+    max-width:400px;
+  ">
+    <h2>👤 Registrieren / Anmelden</h2>
+
+    <input
+      id="authEmail"
+      type="email"
+      placeholder="E-Mail"
+      style="width:100%;padding:14px;margin:8px 0;"
+    >
+
+    <input
+      id="authPassword"
+      type="password"
+      placeholder="Passwort"
+      style="width:100%;padding:14px;margin:8px 0;"
+    >
+
+    <button onclick="registerUser()">
+      Registrieren
+    </button>
+
+    <button onclick="loginUser()">
+      Anmelden
+    </button>
+
+    <button onclick="closeAuth()">
+      Schließen
+    </button>
+
+    <p id="authMessage"></p>
   </div>
+</div>
 
 </body>
 </html>
