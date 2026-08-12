@@ -228,6 +228,51 @@ function checkCode() {
         document.getElementById("error").textContent =
             "❌ Falscher Zugangscode";
     }
+}function showAuth() {
+  document.getElementById("authBox").style.display = "flex";
+}
+
+function closeAuth() {
+  document.getElementById("authBox").style.display = "none";
+}
+
+function registerUser() {
+  const email = document.getElementById("authEmail").value;
+  const password = document.getElementById("authPassword").value;
+  const message = document.getElementById("authMessage");
+
+  if (!email || !password) {
+    message.textContent = "❌ Bitte E-Mail und Passwort eingeben.";
+    return;
+  }
+
+  localStorage.setItem("kickmatchUser", JSON.stringify({
+    email: email,
+    password: password
+  }));
+
+  message.textContent = "✅ Registrierung erfolgreich!";
+}
+
+function loginUser() {
+  const email = document.getElementById("authEmail").value;
+  const password = document.getElementById("authPassword").value;
+  const message = document.getElementById("authMessage");
+
+  const savedUser = localStorage.getItem("kickmatchUser");
+
+  if (!savedUser) {
+    message.textContent = "❌ Noch kein Konto registriert.";
+    return;
+  }
+
+  const user = JSON.parse(savedUser);
+
+  if (user.email === email && user.password === password) {
+    message.textContent = "✅ Erfolgreich angemeldet!";
+  } else {
+    message.textContent = "❌ E-Mail oder Passwort falsch.";
+  }
 }
 
 window.onload = function() {
