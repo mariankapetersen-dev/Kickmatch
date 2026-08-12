@@ -209,7 +209,8 @@
       KickMatch © 2026
     </footer>
 
-  <script>
+  
+<script>
 function checkCode() {
     const code = document.getElementById("accessCode").value;
     const lockScreen = document.getElementById("lockScreen");
@@ -218,7 +219,7 @@ function checkCode() {
     if (code === "1234") {
         lockScreen.style.display = "none";
         app.style.display = "block";
-        localStorage.setItem("kickmatchUnlocked", "true");
+        document.getElementById("error").textContent = "";
     } else {
         document.getElementById("error").textContent =
             "❌ Falscher Zugangscode";
@@ -229,15 +230,13 @@ window.onload = function() {
     const lockScreen = document.getElementById("lockScreen");
     const app = document.querySelector(".app");
 
-    if (localStorage.getItem("kickmatchUnlocked") === "true") {
-        lockScreen.style.display = "none";
-        app.style.display = "block";
-    } else {
-        lockScreen.style.display = "block";
-        app.style.display = "none";
-    
-
+    lockScreen.style.display = "block";
+    app.style.display = "none";
+};
 </script>
+
+
+
 
 
 
