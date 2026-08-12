@@ -1,45 +1,204 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KickMatch</title>
 
-<meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #050805;
+      color: white;
+    }
 
-<title>KickMatch</title>
+    .app {
+      max-width: 500px;
+      margin: auto;
+      min-height: 100vh;
+      background: #050805;
+    }
 
-<style>
+    header {
+      padding: 28px 20px 15px;
+      background: linear-gradient(180deg, #0b180d, #050805);
+    }
 
-*{box-sizing:border-box}
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
 
-body{
+    .green {
+      color: #72e62e;
+    }
 
-  margin:0;
+    .xp {
+      margin-top: 12px;
+      color: #aaa;
+      font-size: 13px;
+    }
 
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+    .bar {
+      height: 7px;
+      background: #222;
+      border-radius: 10px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
 
-  background:#050805;color:white;
+    .bar span {
+      display: block;
+      width: 54%;
+      height: 100%;
+      background: #72e62e;
+    }
 
-}
+    main {
+      padding: 20px;
+    }
 
-.app{max-width:500px;margin:auto;min-height:100vh;padding-bottom:80px}
+    .card {
+      background: #101510;
+      border: 1px solid #293029;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
 
-header{
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
 
-  padding:28px 20px 15px;
+    h2 {
+      font-size: 19px;
+    }
 
-  background:linear-gradient(180deg,#0b180d,#050805);
+    p {
+      color: #bbb;
+      line-height: 1.5;
+    }
 
-}
+    .match {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #292929;
+    }
 
-.logo{font-size:28px;font-weight:900;letter-spacing:1px}
+    .match:last-child {
+      border-bottom: 0;
+    }
 
-.green{color:#72e62e}
+    .team {
+      font-weight: 700;
+    }
 
-.xp{margin-top:12px;color:#aaa;font-size:13px}
+    .vs {
+      color: #72e62e;
+      font-weight: 900;
+    }
 
-.bar{height:7px;background:#222;border-radius:10px;margin-top:7px}
+    button {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #72e62e;
+      color: #061006;
+      font-size: 16px;
+      font-weight: 800;
+      margin-top: 10px;
+    }
 
-.bar span{display:block;width:54%;height:10
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header>
+      <div class="logo">
+        Kick<span class="green">Match</span>
+      </div>
+
+      <div class="xp">
+        XP 540 / 1000
+      </div>
+
+      <div class="bar">
+        <span></span>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="card">
+        <h1>⚽ KickMatch</h1>
+        <p>
+          Finde dein nächstes Fußball-Match.
+        </p>
+
+        <button onclick="alert('Match-Suche gestartet!')">
+          Match finden
+        </button>
+      </div>
+
+      <div class="card">
+        <h2>🔥 Nächste Matches</h2>
+
+        <div class="match">
+          <span class="team">FC Bayern</span>
+          <span class="vs">VS</span>
+          <span class="team">Dortmund</span>
+        </div>
+
+        <div class="match">
+          <span class="team">Leipzig</span>
+          <span class="vs">VS</span>
+          <span class="team">Leverkusen</span>
+        </div>
+
+        <div class="match">
+          <span class="team">Hamburg</span>
+          <span class="vs">VS</span>
+          <span class="team">Bremen</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🏆 Dein Level</h2>
+        <p>
+          Du bist aktuell auf Level 5.
+        </p>
+
+        <div class="bar">
+          <span style="width: 70%;"></span>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      KickMatch © 2026
+    </footer>
+
+  </div>
+
+</body>
+</html>
