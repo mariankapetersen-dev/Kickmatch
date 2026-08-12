@@ -269,7 +269,8 @@ function loginUser() {
   const user = JSON.parse(savedUser);
 
   if (user.email === email && user.password === password) {
-    message.textContent = "✅ Erfolgreich angemeldet!";
+    message.textContent = "✅ Erfolgreich angemeldet!"
+    closeAuth();
   } else {
     message.textContent = "❌ E-Mail oder Passwort falsch.";
   }
